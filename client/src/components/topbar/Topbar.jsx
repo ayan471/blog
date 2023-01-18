@@ -1,8 +1,11 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../../context/Context";
 import React from "./topbar.css";
 
 export default function topbar() {
-  const user = false;
+  const { user } = useContext(Context);
   return (
     <div className="top">
       <div className="topLeft">
