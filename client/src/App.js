@@ -5,7 +5,7 @@ import Register from "./pages/home/register/Register.jsx";
 import Settings from "./pages/home/settings/Settings.jsx";
 import Single from "./pages/home/single/Single.jsx";
 import Write from "./pages/home/write/Write.jsx";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "./context/Context.js";
 function App() {

@@ -5,7 +5,11 @@ import { Context } from "../../context/Context";
 import React from "./topbar.css";
 
 export default function topbar() {
-  const { user } = useContext(Context);
+  const { user, dispatch } = useContext(Context);
+  const PF = "http://localhost:5000/images/";
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" });
+  };
   return (
     <div className="top">
       <div className="topLeft">
@@ -36,16 +40,16 @@ export default function topbar() {
               WRITE
             </Link>
           </li>
-          <li className="topListItem">{user && "LOGOUT"}</li>
+          <li className="topListItem" onClick={handleLogout}>
+            {user && "LOGOUT"}
+          </li>
         </ul>
       </div>
       <div className="topRight">
         {user ? (
-          <img
-            className="topImage"
-            src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-          />
+          <Link to="/settings">
+            <img className="topImage" src={PF + user.profilePic} alt="" />
+          </Link>
         ) : (
           <ul className="topList">
             <li className="topListItem">
